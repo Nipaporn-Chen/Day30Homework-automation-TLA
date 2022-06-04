@@ -4,6 +4,7 @@ import base.BaseTest;
 import dataProvider.DataProviders1;
 import dataProvider.DataProviders2;
 import dataProvider.DataProviders3;
+import dataProvider.DataProviders4;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -40,9 +41,11 @@ public class HomeTest extends BaseTest {
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
-    @Test(testName = "Verify all links on the homepage - Internet")
-    public void test03(){
-
+    @Test(dataProvider = "expectedTitle4", dataProviderClass = DataProviders4.class)
+    public void testAllLinks04(String expectedTitle){
+        homePage.click(homePage.teaLink);
+        String actualTitle = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
+        Assert.assertEquals(actualTitle, expectedTitle);
     }
 
 
