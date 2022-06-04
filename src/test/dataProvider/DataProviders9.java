@@ -3,7 +3,7 @@ package dataProvider;
 import org.testng.annotations.DataProvider;
 
 public class DataProviders9 {
-    @DataProvider(name = "userInfo")
+    @org.testng.annotations.DataProvider(name = "userInfo2")
     public Object[][] data() {
         Object[][] data = new Object[1][5];
         data[0][0] = "Lilly";

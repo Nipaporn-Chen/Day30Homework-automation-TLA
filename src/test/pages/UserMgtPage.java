@@ -17,4 +17,25 @@ public class UserMgtPage extends BasePage {
 
     @FindBy(id = "access-db-btn")
     public WebElement AccessDBBtn;
+
+    @FindBy(id = "Firstname")
+    public WebElement firstName;
+
+    @FindBy(id = "Lastname")
+    public WebElement lastName;
+
+    @FindBy(id = "Phonenumber")
+    public WebElement phoneNumber;
+
+    @FindBy(id = "Email")
+    public WebElement email;
+
+    @FindBy(id = "Select-role")
+    public WebElement role;
+
+    @FindBy(id = "submit-btn")
+    public WebElement submitBtn;
+
+    @FindBy(xpath = "//tr/td[5]")
+    public WebElement verRole;
 }
