@@ -43,7 +43,7 @@ public class HomeTest extends BaseTest {
 
     @Test(dataProvider = "expectedTitle4", dataProviderClass = DataProviders4.class)
     public void testAllLinks04(String expectedTitle){
-        homePage.click(homePage.teaLink);
+        homePage.click(homePage.ecommerceLink);
         String actualTitle = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
         Assert.assertEquals(actualTitle, expectedTitle);
     }
