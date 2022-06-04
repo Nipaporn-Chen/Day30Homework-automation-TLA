@@ -1,6 +1,7 @@
 package tests;
 
 import base.BaseTest;
+import dataProvider.DataProviders10;
 import dataProvider.DataProviders2;
 import dataProvider.DataProviders8;
 import dataProvider.DataProviders9;
@@ -58,4 +59,19 @@ public class UserMgtTest extends BaseTest {
         Assert.assertEquals(role, actualRole);
 
     }
+
+    @Test(dataProvider = "userInfo3", dataProviderClass = DataProviders10.class)
+    public void testUserRole03(String firstName, String lastName, String phoneNumber, String email, String role){
+        homePage.click(homePage.UserMgtBtn);
+        userMgtPage.sendKeys(userMgtPage.firstName, firstName);
+        userMgtPage.sendKeys(userMgtPage.lastName, lastName);
+        userMgtPage.sendKeys(userMgtPage.phoneNumber, phoneNumber);
+        userMgtPage.sendKeys(userMgtPage.email, email);
+        userMgtPage.sendKeys(userMgtPage.role, role);
+        userMgtPage.click(userMgtPage.submitBtn);
+        String actualRole = userMgtPage.getText(userMgtPage.verRole);
+        Assert.assertEquals(role, actualRole);
+
+    }
+
 }
