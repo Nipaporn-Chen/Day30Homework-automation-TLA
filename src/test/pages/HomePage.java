@@ -36,4 +36,9 @@ public class HomePage extends BasePage {
     @FindBy(id = "shopping-cart")
     public WebElement shoppingLink;
 
+    @FindBy(xpath = "//a[text()='User-Mgt']")
+    public WebElement UserMgtBtn;
+
+
+
 }
