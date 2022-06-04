@@ -59,5 +59,12 @@ public class HomeTest extends BaseTest {
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 
+    @Test(dataProvider = "expectedTitle7", dataProviderClass = DataProviders7.class)
+    public void testAllLinks07(String expectedTitle){
+        homePage.click(homePage.shoppingLink);
+        String actualTitle = SeleniumUtils.switchToWindowAndVerifyTitle(getDriver(), extentManager);
+        Assert.assertEquals(actualTitle, expectedTitle);
+    }
+
 
 }
